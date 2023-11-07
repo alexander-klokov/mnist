@@ -5,7 +5,7 @@ from torch.utils.data import Dataset
 import pandas
 import matplotlib.pyplot as plt
 
-from mnist_train.mnist_dataset import MnistDataset
+from mnist_dataset import MnistDataset
 
 PATH_TO_MODEL = "mnist_model/mnist_model.pth"
 
@@ -46,7 +46,7 @@ class Classifier(nn.Module):
         if (self.counter % 10 == 0):
             self.progress.append(loss.item())
             pass
-        if (self.counter % 10000 == 0):
+        if (self.counter % 1000 == 0):
             print("counter = ", self.counter)
             pass
 

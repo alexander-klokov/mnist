@@ -3,8 +3,8 @@ import pandas
 
 import matplotlib.pyplot as plt
 
-from mnist_train.mnist_classifier import Classifier
-from mnist_train.mnist_dataset import MnistDataset
+from mnist_classifier import Classifier
+from mnist_dataset import MnistDataset
 
 mnist_dataset_test = MnistDataset('mnist_data/mnist_test.csv')
 

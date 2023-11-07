@@ -1,14 +1,9 @@
 import torch
-import torch.nn as nn
+# import torch.nn as nn
 from torch.utils.data import Dataset
 
 import pandas
 import matplotlib.pyplot as plt
-
-if torch.cuda.is_available():
-    # torch.set_default_device('cuda')
-    # print('using cuda:', torch.cuda.get_device_name(0))
-    pass
 
 class MnistDataset(Dataset):
 

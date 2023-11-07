@@ -1,8 +1,7 @@
 import torch
-# import matplotlib.pyplot as plt
 
-from mnist_train.mnist_classifier import Classifier
-from mnist_train.mnist_dataset import MnistDataset
+from mnist_classifier import Classifier
+from mnist_dataset import MnistDataset
 
 mnist_dataset_train = MnistDataset('mnist_data/mnist_train.csv')
 
@@ -12,7 +11,7 @@ if torch.cuda.is_available():
     pass
 
 # training
-epochs = 1
+epochs = 3
 
 c = Classifier()
 
