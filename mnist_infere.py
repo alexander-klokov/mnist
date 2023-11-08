@@ -19,8 +19,9 @@ c = Classifier()
 c.load_model()
 
 image_data = mnist_dataset_test[RECORD][1]
-output_tensor = c.forward(image_data.cuda())
+output_tensor = c.forward(image_data)
 
-pandas.DataFrame(output_tensor.cpu().detach().numpy()).plot(kind='bar', legend=False, ylim=(0,1), figsize=(15,10))
+pandas.DataFrame(output_tensor.detach().numpy()).plot(
+    kind='bar', legend=False, ylim=(0, 1), figsize=(15, 10))
 
 plt.show()

@@ -12,7 +12,7 @@ c = Classifier()
 c.load_model()
 
 for label, image_data_tensor, target_tensor in mnist_dataset_test:
-    answer = c.forward(image_data_tensor.cuda()).cpu().detach().numpy()
+    answer = c.forward(image_data_tensor).detach().numpy()
     if (answer.argmax() == label):
         score += 1
         pass

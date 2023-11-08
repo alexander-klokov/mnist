@@ -9,11 +9,6 @@ from mnist_dataset import MnistDataset
 
 PATH_TO_MODEL = "mnist_model/mnist_model.pth"
 
-if torch.cuda.is_available():
-    torch.set_default_device('cuda')
-    print('using cuda:', torch.cuda.get_device_name(0))
-    pass
-
 class Classifier(nn.Module):
     def __init__(self):
         super().__init__()
@@ -47,7 +42,7 @@ class Classifier(nn.Module):
             self.progress.append(loss.item())
             pass
         if (self.counter % 1000 == 0):
-            print("counter = ", self.counter)
+            print("j =", self.counter)
             pass
 
         self.optimizer.zero_grad()
