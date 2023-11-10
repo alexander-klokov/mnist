@@ -1,11 +1,6 @@
 import torch
 import torch.nn as nn
-from torch.utils.data import Dataset
-
 import pandas
-import matplotlib.pyplot as plt
-
-from mnist_dataset import MnistDataset
 
 PATH_TO_MODEL = "mnist_model/mnist_model.pth"
 
@@ -61,6 +56,5 @@ class Classifier(nn.Module):
 
     def load_model(self):
         self.model.load_state_dict(torch.load(PATH_TO_MODEL))
-
     pass
 

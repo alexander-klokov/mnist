@@ -1,18 +1,20 @@
-import matplotlib.pyplot as plt
+import os
+import torch
 
 from mnist_classifier import Classifier
 from mnist_dataset import MnistDataset
 
-mnist_dataset_test = MnistDataset('mnist_data/mnist_test.csv')
+path_to_data = os.environ["DATA_CSV_MNIST"]
+mnist_dataset_test = MnistDataset(path_to_data + '/mnist_test.csv')
 
 score = 0
 items = 0
 
-c = Classifier()
-c.load_model()
+C = Classifier()
+C.load_model()
 
 for label, image_data_tensor, target_tensor in mnist_dataset_test:
-    answer = c.forward(image_data_tensor).detach().numpy()
+    answer = C.forward(image_data_tensor).detach().numpy()
     if (answer.argmax() == label):
         score += 1
         pass

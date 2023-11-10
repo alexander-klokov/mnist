@@ -1,3 +1,4 @@
+import os
 import sys
 import pandas
 
@@ -6,7 +7,8 @@ import matplotlib.pyplot as plt
 from mnist_classifier import Classifier
 from mnist_dataset import MnistDataset
 
-mnist_dataset_test = MnistDataset('mnist_data/mnist_test.csv')
+path_to_data = os.environ["DATA_CSV_MNIST"]
+mnist_dataset_test = MnistDataset(path_to_data + '/mnist_test.csv')
 
 PATH_TO_MODEL = './mnist_model'
 RECORD = int(sys.argv[1])
@@ -14,7 +16,6 @@ RECORD = int(sys.argv[1])
 mnist_dataset_test.plot_image(RECORD)
 
 # infere
-
 c = Classifier()
 c.load_model()
 

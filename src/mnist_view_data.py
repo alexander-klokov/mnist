@@ -1,10 +1,11 @@
+import os
 import sys
-import matplotlib.pyplot as plt
 
 from mnist_dataset import MnistDataset
 
-mnist_dataset_train = MnistDataset('mnist_data/mnist_train.csv')
-mnist_dataset_test = MnistDataset('mnist_data/mnist_test.csv')
+path_to_data = os.environ["DATA_CSV_MNIST"]
+
+mnist_dataset_train = MnistDataset(path_to_data + '/mnist_train.csv')
 
 RECORD = int(sys.argv[1])
 

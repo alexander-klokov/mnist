@@ -1,11 +1,13 @@
+SRC='src'
+
 view:
-	python3 mnist_view_data.py $(record)
+	python3 ${SRC}/mnist_view_data.py $(record)
 
 train:
-	python3 mnist_train.py
+	python3 ${SRC}/mnist_train.py
 
 test:
-	python3 mnist_test.py
+	python3 ${SRC}/mnist_test.py
 
 infere:
-	python3 mnist_infere.py $(record)
+	python3 ${SRC}/mnist_infere.py $(record)
